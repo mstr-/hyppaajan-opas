@@ -1,0 +1,469 @@
+\documentclass[10pt,twoside,openany,hidelinks]{memoir}
+\usepackage{memsty}
+\usepackage{memlays}
+\usepackage[paper=b5paper]{geometry}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage{multicol}
+\usepackage[hypcap,font=small,format=hang,font=it,labelfont=bf]{caption}
+\usepackage{marvosym}
+\usepackage{textcomp} 
+\usepackage{lipsum}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[condensed]{cabin}
+\usepackage{framed}
+\usepackage{pdfpages}
+\graphicspath{{graphics/}}
+
+\addto\captionsfinnish{\def\figurename{}}
+\makeatletter 
+\renewcommand{\thefigure}{\arabic{chapter}.S\arabic{figure}}
+\makeatother
+
+\newcommand{\Rparagraph}[1]{\paragraph{#1}}
+
+\DeclareUnicodeCharacter{21D2}{\(\Rightarrow\)}
+\DeclareUnicodeCharacter{21E8}{\(\Rightarrow\)}
+\DeclareUnicodeCharacter{2003}{ }
+\DeclareUnicodeCharacter{20AC}{\EUR{}}
+\DeclareUnicodeCharacter{00B0}{\textdegree}
+\newcommand{\raisedrule}[2][0em]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+\newcommand{\percent}{\%}
+
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+\title{Laskuvarjohyppääjän opas}
+\hypersetup{
+    pdftitle = {Laskuvarjohyppääjän opas},
+    pdfauthor = {SIL-opasryhmä}
+}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\setstocksize{250mm}{176mm}
+\setlength{\trimtop}{0mm} 
+\setlength{\trimedge}{0mm}
+\setbinding{7mm}
+\setlrmarginsandblock{8mm}{*}{*}
+\setulmarginsandblock{25mm}{20mm}{*}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{3\onelineskip}{2\onelineskip} 
+\setheaderspaces{*}{\onelineskip}{*}
+\checkandfixthelayout
+\fixpdflayout
+
+\settocdepth{section}
+\setsecnumdepth{subsection}
+\pagestyle{headings}
+\makeevenhead{headings}{\textbf{\thepage}}{}{\leftmark}
+\makeoddhead{headings}{\rightmark}{}{\textbf{\thepage}}
+%% \makeheadrule{headings}{\textwidth}{\normalrulethickness}
+\chapterstyle{wilsondob}
+\setsecheadstyle{\LARGE\sffamily\raggedright}
+\setsubsecheadstyle{\Large\sffamily\raggedright}
+\setsubsubsecheadstyle{\large\sffamily\raggedright}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5\onelineskip}
+\setlength{\columnsep}{6mm}
+\renewcommand*{\chapnumfont}{\sffamily\Huge}%
+\renewcommand*{\printchapternum}{\raggedleft\chapnumfont \thechapter\quad}%
+\renewcommand*{\afterchapternum}{}%
+\renewcommand*{\chaptitlefont}{\chapnumfont}%
+\renewcommand*{\printchapternonum}{\raggedleft}
+\renewcommand*{\partnamefont}{\sffamily\fontsize{36pt}{1em}\bfseries}
+\renewcommand*{\partnumfont}{\sffamily\fontsize{36pt}{1em}\bfseries}
+\renewcommand*{\parttitlefont}{\sffamily\fontsize{42pt}{1em}\bfseries}
+
+\urlstyle{rm}
+
+%% title page
+\newcommand*{\titleDB}{\begingroup% Design of Books, by Adrian Wilson
+%\LXfont{ppl}%   Palatino/Palladio
+\tdrop = 0.14\txtheight
+%\centering
+%\vspace*{\tdrop}
+\sffamily
+\raggedleft
+\Large
+{20.4.2014} 
+\Huge
+\vspace*{\baselineskip} \\
+{Suomen Ilmailuliitto}\\[0.3\baselineskip]
+{Laskuvarjotoimikunta}\\[0.3\baselineskip]
+{Koulutus- ja turvallisuuskomitea}\\[0.2\baselineskip]
+\hrulefill 
+\vspace*{0.4\baselineskip} \\
+\raggedright
+\parttitlefont
+{LASKUVARJOHYPPÄÄJÄN}\\[\baselineskip]
+{OPAS}\\[2\baselineskip]
+%\begin{vplace}
+\LARGE
+{Toimittanut}\\[0.3\baselineskip]
+{Opastyöryhmä 2013-2014}\\[0.3\baselineskip]
+\vfill
+\LARGE
+{Lähetä palautetta:}\\
+{www.laskuvarjotoimikunta.fi/opaspalaute}\\
+%\end{vplace}
+\endgroup}
+
+\begin{document}
+\frontmatter
+
+\pagestyle{empty}
+\titleDB
+\newpage
+
+\pagestyle{headings}
+\tableofcontents
+
+\chapter{Tervetuloa Taivaalle}
+\label{tervetuloa-taivaalle}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{tervetuloa-taivaalle.tex}\end{multicols}
+
+\chapter{Laskuvarjohyppykoulutus}
+\label{laskuvarjohyppykoulutus}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{laskuvarjohyppykoulutus.tex}\end{multicols}
+
+\mainmatter\midsloppy\part{Alkeiskoulutus}\chapter{Yhteenveto: Alkeiskoulutus}
+\label{yhteenveto-alkeiskoulutus}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{yhteenveto-alkeiskoulutus.tex}\end{multicols}
+
+\chapter{Laskuvarjokalusto ja hyppyvarusteet}
+\label{laskuvarjokalusto-ja-hyppyvarusteet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{laskuvarjokalusto-ja-hyppyvarusteet.tex}\end{multicols}
+
+\chapter{Hyppytapahtuma}
+\label{hyppytapahtuma}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{hyppytapahtuma.tex}\end{multicols}
+
+\chapter{Päävarjon vajaatoiminnot}
+\label{paavarjon-vajaatoiminnot}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{paavarjon-vajaatoiminnot.tex}\end{multicols}
+
+\chapter{Mahdolliset vaaratilanteet}
+\label{mahdolliset-vaaratilanteet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{mahdolliset-vaaratilanteet.tex}\end{multicols}
+
+\chapter{NOVA-Alkeiskoulutuksen suoritukset}
+\label{nova-alkeiskoulutuksen-suoritukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{nova-alkeiskoulutuksen-suoritukset.tex}\end{multicols}
+
+\chapter{PL-Alkeiskoulutuksen suoritukset}
+\label{pl-alkeiskoulutuksen-suoritukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{pl-alkeiskoulutuksen-suoritukset.tex}\end{multicols}
+
+\part{Peruskoulutus}\chapter{Yhteenveto: Peruskoulutus}
+\label{yhteenveto-peruskoulutus}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{yhteenveto-peruskoulutus.tex}\end{multicols}
+
+\chapter{Uloshyppytyylit}
+\label{uloshyppytyylit}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{uloshyppytyylit.tex}\end{multicols}
+
+\chapter{Perusliikkeet vapaassa}
+\label{perusliikkeet-vapaassa}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{perusliikkeet-vapaassa.tex}\end{multicols}
+
+\chapter{Sääoppi}
+\label{saaoppi}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{saaoppi.tex}\end{multicols}
+
+\chapter{Uloshyppypaikan määritys}
+\label{uloshyppypaikan-maaritys}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{uloshyppypaikan-maaritys.tex}\end{multicols}
+
+\chapter{Varusteiden tarkastus}
+\label{varusteiden-tarkastus}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{varusteiden-tarkastus.tex}\end{multicols}
+
+\chapter{NOVA-Peruskoulutuksen suoritukset}
+\label{nova-peruskoulutuksen-suoritukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{nova-peruskoulutuksen-suoritukset.tex}\end{multicols}
+
+\chapter{PL-Peruskoulutuksen suoritukset}
+\label{pl-peruskoulutuksen-suoritukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{pl-peruskoulutuksen-suoritukset.tex}\end{multicols}
+
+\chapter{Peruskoulutuksen muut suoritukset}
+\label{peruskoulutuksen-muut-suoritukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{peruskoulutuksen-muut-suoritukset.tex}\end{multicols}
+
+\part{Jatkokoulutus}\chapter{Yhteenveto: Jatkokoulutus}
+\label{yhteenveto-jatkokoulutus}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{yhteenveto-jatkokoulutus.tex}\end{multicols}
+
+\chapter{FS-kuviohyppääminen}
+\label{fs-kuviohyppaaminen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{fs-kuviohyppaaminen.tex}\end{multicols}
+
+\chapter{Free-hyppääminen}
+\label{free-hyppaaminen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{free-hyppaaminen.tex}\end{multicols}
+
+\chapter{Kuvunkäsittely oppilaana}
+\label{kuvunkasittely-oppilaana}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{kuvunkasittely-oppilaana.tex}\end{multicols}
+
+\chapter{Omiin varusteisiin siirtyminen}
+\label{omiin-varusteisiin-siirtyminen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{omiin-varusteisiin-siirtyminen.tex}\end{multicols}
+
+\chapter{Kaluston tarkastus ja huolto}
+\label{kaluston-tarkastus-ja-huolto}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{kaluston-tarkastus-ja-huolto.tex}\end{multicols}
+
+\chapter{Pakkaustarkastus}
+\label{pakkaustarkastus}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{pakkaustarkastus.tex}\end{multicols}
+
+\chapter{Määräykset, lait ja ohjeet}
+\label{maaraykset-lait-ja-ohjeet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{maaraykset-lait-ja-ohjeet.tex}\end{multicols}
+
+\chapter{Hyppytoiminnan järjestäminen}
+\label{hyppytoiminnan-jarjestaminen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{hyppytoiminnan-jarjestaminen.tex}\end{multicols}
+
+\chapter{Erikoishypyt}
+\label{erikoishypyt}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{erikoishypyt.tex}\end{multicols}
+
+\chapter{Fysiologia}
+\label{fysiologia}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{fysiologia.tex}\end{multicols}
+
+\chapter{Riskitekijät, toiminta onnettomuustilanteessa ja ensiapu}
+\label{riskitekijat-toiminta-onnettomuustilanteessa-ja-ensiapu}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{riskitekijat-toiminta-onnettomuustilanteessa-ja-ensiapu.tex}\end{multicols}
+
+\chapter{Jatkokoulutuksen suoritukset}
+\label{jatkokoulutuksen-suoritukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{jatkokoulutuksen-suoritukset.tex}\end{multicols}
+
+\part{FS-opas}\chapter{Yleistä FS-hyppäämisestä}
+\label{yleista-fs-hyppaamisesta}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{yleista-fs-hyppaamisesta.tex}\end{multicols}
+
+\chapter{FS-hyppääjän varusteet}
+\label{fs-hyppaajan-varusteet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{fs-hyppaajan-varusteet.tex}\end{multicols}
+
+\chapter{FS-hyppäämisen perusteet}
+\label{fs-hyppaamisen-perusteet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{fs-hyppaamisen-perusteet.tex}\end{multicols}
+
+\chapter{Hypyn läpikäyminen maassa}
+\label{hypyn-lapikayminen-maassa}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{hypyn-lapikayminen-maassa.tex}\end{multicols}
+
+\chapter{Vapaapudotusharjoittelu}
+\label{vapaapudotusharjoittelu}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{vapaapudotusharjoittelu.tex}\end{multicols}
+
+\chapter{Mielikuva- eli mentaaliharjoittelu}
+\label{mielikuva-eli-mentaaliharjoittelu}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{mielikuva-eli-mentaaliharjoittelu.tex}\end{multicols}
+
+\chapter{4-way joukkuehyppääminen}
+\label{4-way-joukkuehyppaaminen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{4-way-joukkuehyppaaminen.tex}\end{multicols}
+
+\chapter{Tuoreen lisenssihyppääjän FS-ohjelma}
+\label{tuoreen-lisenssihyppaajan-fs-ohjelma}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{tuoreen-lisenssihyppaajan-fs-ohjelma.tex}\end{multicols}
+
+\chapter{Suuret muodostelmat}
+\label{suuret-muodostelmat}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{suuret-muodostelmat.tex}\end{multicols}
+
+\part{Freefly-opas}\chapter{Johdanto freehyppäämiseen}
+\label{johdanto-freehyppaamiseen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{johdanto-freehyppaamiseen.tex}\end{multicols}
+
+\chapter{Freefly - lentoasennot}
+\label{freefly-lentoasennot}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{freefly-lentoasennot.tex}\end{multicols}
+
+\chapter{Turvallisuus freehyppäämisessä}
+\label{turvallisuus-freehyppaamisessa}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{turvallisuus-freehyppaamisessa.tex}\end{multicols}
+
+\chapter{Freefly kilpailulajina}
+\label{freefly-kilpailulajina}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{freefly-kilpailulajina.tex}\end{multicols}
+
+\part{Kuvunkäsittelyopas}\chapter{Yleistä kuvunkäsittelystä}
+\label{yleista-kuvunkasittelysta}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{yleista-kuvunkasittelysta.tex}\end{multicols}
+
+\chapter{Varjon ominaisuudet}
+\label{varjon-ominaisuudet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{varjon-ominaisuudet.tex}\end{multicols}
+
+\chapter{Laskuvarjoon vaikuttavat fysikaaliset voimat ja nosteen syntyminen}
+\label{laskuvarjoon-vaikuttavat-fysikaaliset-voimat-ja-nosteen-syntyminen}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{laskuvarjoon-vaikuttavat-fysikaaliset-voimat-ja-nosteen-syntyminen.tex}\end{multicols}
+
+\chapter{Ilmakehän fysikaalisten ominaisuuksien vaikutukset laskuvarjon suorituskykyyn}
+\label{ilmakehan-fysikaalisten-ominaisuuksien-vaikutukset-laskuvarjon-suorituskykyyn}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{ilmakehan-fysikaalisten-ominaisuuksien-vaikutukset-laskuvarjon-suorituskykyyn.tex}\end{multicols}
+
+\chapter{Siipikuorma ja varjojen luokittelu}
+\label{siipikuorma-ja-varjojen-luokittelu}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{siipikuorma-ja-varjojen-luokittelu.tex}\end{multicols}
+
+\chapter{Varjon valinta}
+\label{varjon-valinta}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{varjon-valinta.tex}\end{multicols}
+
+\chapter{Hyppytapahtuma kuvunkäsittelyhypyillä}
+\label{hyppytapahtuma-kuvunkasittelyhypyilla}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{hyppytapahtuma-kuvunkasittelyhypyilla.tex}\end{multicols}
+
+\chapter{Laskeutumistekniikat}
+\label{laskeutumistekniikat}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{laskeutumistekniikat.tex}\end{multicols}
+
+\chapter{Laskeutumisvirheet}
+\label{laskeutumisvirheet}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{laskeutumisvirheet.tex}\end{multicols}
+
+\chapter{Kuvunkäsittelyharjoitukset}
+\label{kuvunkasittelyharjoitukset}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{kuvunkasittelyharjoitukset.tex}\end{multicols}
+
+\chapter{Kuvunkäsittely: Loppusanat}
+\label{kuvunkasittely-loppusanat}
+\thispagestyle{headings}
+\begin{multicols}{2}
+\input{kuvunkasittely-loppusanat.tex}\end{multicols}
+
+\part{Liitteet}\pagestyle{simple}
+\appendix
+
+%\section*{Käsimerkit}\label{kasimerkit}{ \centering\includegraphics[scale=0.7]{Kasimerkit.pdf} \par}
+\includepdf[pages={-}]{Kasimerkit-B5.pdf}
+%\section*{Koulutusohjelma}\label{Koulutusohjelma}{ \centering\includegraphics[scale=0.85]{Koulutusohjelma.pdf} \par}
+\includepdf[pages={-}]{Koulutusohjelma2.pdf}
+
+\section*{Hyppysanastoa}
+\label{hyppysanastoa}
+\begin{multicols}{2}
+\input{hyppysanastoa.tex}\end{multicols}
+
+\end{document}
